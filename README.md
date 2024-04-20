@@ -1,2 +1,2 @@
 # Trugrady
-A teams project of our webstack portfolio project
+Our webstack portfolio project
