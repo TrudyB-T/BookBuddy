@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In</title>
+  <style>
+    /* Add your CSS styles here */
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .form-group {
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      background-color: #3d0b44;
+      color: #fff;
+      border: none;
+    }
+    button:hover {
+      background-color: rgb(86, 35, 74);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: 20px;">Sign In</h2>
+    <form id="signin-form">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+      </div>
+      <button type="submit">Sign In</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('signin-form').addEventListener('submit', async function(event) {
+      event.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      try {
+        // Send form data to backend API for authentication
+        const response = await fetch('/api/signin', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, password }),
+        });
+
+        if (response.ok) {
+          // If sign-in is successful, clear form fields and redirect to homepage
+          document.getElementById('email').value = '';
+          document.getElementById('password').value = '';
+          console.log('Sign-in successful!');
+          window.location.href = 'home.html'; // Redirect to homepage
+        } else {
+          console.error('Sign-in failed');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    });
+  </script>
+</body>
+</html>
