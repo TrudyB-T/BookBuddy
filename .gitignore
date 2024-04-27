@@ -1,0 +1,44 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore node modules
+node_modules/
+
+# Ignore logs
+*.log
+
+# Ignore the build folder
+/dist
+
+# Ignore .env files
+.env
+
+# Ignore IDE specific files
+.idea/
+*.swp
+*.swo
+*.swn
+*.swm
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+
+# Ignore Python specific files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore Java specific files
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
+/target/
