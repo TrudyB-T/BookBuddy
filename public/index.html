@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Buddy - Learn and Explore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        header {
+            background-color: #3d0b44;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex; /* Use flexbox to create a horizontal layout */
+            justify-content: flex-start; /* Align items to the left side */
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-top: 0;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .categories {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        .category {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .category h2 {
+            font-size: 24px;
+            margin-top: 0;
+        }
+        .category img {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        .get-started-button {
+            display: block;
+            width: 200px;
+            margin: 40px auto;
+            padding: 15px 20px;
+            background-color: #3d0b44;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .get-started-button:hover {
+            background-color: #1a051f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Book Buddy</h1>
+        <p>Embarking  on a Journey of Knowledge and Discovery</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>About Book Buddy</h2>
+        <p>Book Buddy is an online platform dedicated to providing a wide range of educational resources to enthusiasts and learners alike. Whether you're interested in delving into the depths of history, unraveling the mysteries of computer science, exploring the wonders of science and mathematics, understanding the intricacies of politics and government, pondering the profound questions of philosophy, or mastering the principles of business and management, as well as economics and finance, Book Buddy has something for everyone.</p>
+        <p>With our vast collection of books spanning various genres and disciplines, you can embark on a journey of knowledge and discovery from the comfort of your home. Our mission is to empower individuals to expand their horizons, cultivate their intellect, and foster a lifelong love for learning.</p>
+        <h2>Explore Our Categories</h2>
+        <div class="categories">
+            <div class="category">
+                <img src="./image/history.jpg" alt="History">
+                <h2>History</h2>
+                <p>Uncover the stories of the past and gain insights into the events that have shaped our world.</p>
+            </div>
+            <div class="category">
+                <img src="./image/computer.jpg" alt="Computer Science">
+                <h2>Computer Science</h2>
+                <p>Discover the principles of computing and explore the fascinating world of technology.</p>
+            </div>
+            <div class="category">
+                <img src="./image/mathematics.jpg" alt="Science & Mathematics">
+                <h2>Science & Mathematics</h2>
+                <p>Unlock the mysteries of the universe and delve into the wonders of science and mathematics.</p>
+            </div>
+        </div>
+        <div class="categories">
+            <div class="category">
+                <img src="./image/politics.jpg" alt="Politics & Government">
+                <h2>Politics & Government</h2>
+                <p>Examine the dynamics of political systems and explore the institutions that govern our societies.</p>
+            </div>
+            <div class="category">
+                <img src="./image/philosophy.jpg" alt="Philosophy">
+                <h2>Philosophy</h2>
+                <p>Contemplate the fundamental questions of existence and engage in thought-provoking philosophical discourse.</p>
+            </div>
+            <div class="category">
+                <img src="./image/business.jpg" alt="Business & Management">
+                <h2>Business & Management</h2>
+                <p>Master the principles of business and management to succeed in the corporate world.</p>
+            </div>
+        </div>
+        <div class="categories">
+            <div class="category">
+                <img src="./image/finance.jpg" alt="Economics & Finance">
+                <h2>Economics & Finance</h2>
+                <p>Gain insights into economic theories and financial strategies to navigate the world of finance.</p>
+            </div>
+        </div>
+        <a href="signup.html" class="get-started-button">Get Started</a>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Assuming you have a logout button in your HTML with id "logout-button"
+            const logoutButton = document.getElementById('logout-button');
+
+            logoutButton.addEventListener('click', async () => {
+                try {
+                    // Send a POST request to the logout endpoint
+                    const response = await fetch('/api/logout', {
+                        method: 'POST'
+                    });
+
+                    if (response.ok) {
+                        // If logout is successful, clear authentication token from local storage or cookies
+                        localStorage.removeItem('authToken'); // Example for local storage
+
+                        // Redirect the user to another page (e.g., login page)
+                        window.location.href = '/index.html'; // Change the URL to the home page URL
+                    } else {
+                        console.error('Logout failed');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
