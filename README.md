@@ -1,4 +1,4 @@
-BookBuddy - Your Ultimate Literary Companion
+# BookBuddy - Your Ultimate Literary Companion
 
 **Introduction:**
 
