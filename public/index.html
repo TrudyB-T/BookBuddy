@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Book Buddy - Learn and Explore</title>
     <style>
         body {
@@ -18,22 +19,32 @@
             padding: 20px;
             text-align: center;
         }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex; /* Use flexbox to create a horizontal layout */
-            justify-content: flex-start; /* Align items to the left side */
-        }
 
-        nav ul li {
-            margin-right: 20px;
-        }
+        #navbar{
+    display: flex;
+    align-items: right;
+    justify-content: right;
+  }
+  
+  #navbar li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+  }
+  
+  #navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color:  #fff;
+    transition: 0.3s ease;
+  }
+  
+  #navbar li a:hover,
+  #navbar li a.current{
+    color: grey;
+  }
 
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-        }
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -83,18 +94,35 @@
         .get-started-button:hover {
             background-color: #1a051f;
         }
+
+        footer {
+    background-color: #3d0b44;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+#back-btn {
+    display: block;
+    background-color: #3d0b44;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
     </style>
 </head>
 <body>
     <header>
         <h1>Welcome to Book Buddy</h1>
-        <p>Embarking  on a Journey of Knowledge and Discovery</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
+        <p>Your Ultimate Literary Companion</p>
+        <div>
+            <ul id="navbar">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="books.html">Books</a></li>
+              <li><a><i class="fa fa-cart-shopping"></i></a></li>
             </ul>
-        </nav>
+           </div>
     </header>
     <div class="container">
         <h2>About Book Buddy</h2>
@@ -144,6 +172,10 @@
         </div>
         <a href="signup.html" class="get-started-button">Get Started</a>
     </div>
+    <footer>
+        <a href="index.html" id="back-btn">Go Back</a>
+        <p>&copy; 2024 Our Team - All rights reserved</p>
+    </footer>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Assuming you have a logout button in your HTML with id "logout-button"
