@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>About Our Team</title>
     <style>
         body {
@@ -38,29 +39,67 @@ footer {
     background-color: #3d0b44;
     color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
+    padding-bottom: 0px;
 }
 
-        #back-btn {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #3d0b44;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #back-btn:hover {
-            background-color: #572850;
-        }
+#back-btn {
+    display: block;
+    background-color: #3d0b44;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#back-btn:hover {
+    background-color: #572850;
+}
+
+#navbar{
+    display: flex;
+    align-items: right;
+    justify-content: right;
+  }
+  
+  #navbar li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+  }
+  
+  #navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color:  #fff;
+    transition: 0.3s ease;
+  }
+  
+  #navbar li a:hover,
+  #navbar li a.current{
+    color: grey;
+  }
+
+  .about{
+    text-align: center;
+    padding: 15px;
+  }
     </style>
 </head>
 <body>
     <header>
-        <h1>About Our Team</h1>
+        <div>
+            <ul id="navbar">
+              <li><a href="home.html">Home</a></li>
+              <li><a class="current" href="about.html">About</a></li>
+              <li><a href="books.html">Books</a></li>
+              <li><a href="cart.html"><i class="fa fa-cart-shopping"></i></a></li>
+            </ul>
+           </div>
     </header>
     
+    <h1 class="about">About Our Team</h1>
     <section id="grace">
         <h2>Meet Grace</h2>
         <p>Grace's passion for promoting health and well-being extends to her love for books, particularly those related to nutrition, wellness, and personal development. As a nutritionist, she finds solace and inspiration in the pages of books that offer insights into healthy living and holistic wellness. Grace's dedication to her profession is matched only by her thirst for knowledge, driving her to explore diverse literary genres. Like Trudy and Dorothy, Grace is also drawn to the world of technology, recognizing its potential to enhance her work and deepen her understanding of health-related topics.</p>
