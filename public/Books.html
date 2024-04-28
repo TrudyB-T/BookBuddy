@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Book Buddy - Books</title>
     <style>
         body {
@@ -19,19 +20,30 @@
             justify-content: space-between;
             align-items: center;
         }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-        }
+        #navbar{
+    display: flex;
+    align-items: right;
+    justify-content: right;
+  }
+  
+  #navbar li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+  }
+  
+  #navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color:  #fff;
+    transition: 0.3s ease;
+  }
+  
+  #navbar li a:hover,
+  #navbar li a.current{
+    color: grey;
+  }
         main {
             padding: 20px;
         }
@@ -59,12 +71,13 @@
         <div class="logo">
             <h1>Book Buddy - Books</h1>
         </div>
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="cart.html"><img src="./image/carttttt.jpg" alt="Shopping Cart"></a></li>
+        <div>
+            <ul id="navbar">
+              <li><a href="home.html">Home</a></li>
+              <li><a class="current" href="books.html">Books</a></li>
+              <li><a><i class="fa fa-cart-shopping"></i></a></li>
             </ul>
-        </nav>
+           </div>
     </header>
     <main>
         <h2>Categories</h2>
