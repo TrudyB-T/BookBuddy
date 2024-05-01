@@ -62,11 +62,30 @@ document.addEventListener("DOMContentLoaded", function() {
                 const price = document.createElement("p");
                 price.textContent = `Price: $${generateRandomPrice(80, 250)}`;
 
-                const addToCartButton = document.createElement("button");
-                addToCartButton.textContent = "Add to Cart";
-                addToCartButton.addEventListener("click", function() {
-                    addToCart(book);
-                });
+
+
+               // Define an empty array to store the cart items
+const cart = [];
+
+// Function to add a book to the cart
+function addToCart(book) {
+    cart.push(book);
+    console.log("Book added to cart:", book);
+    // You can do more here, like updating the UI to reflect the change in the cart
+}
+
+// Create a button element
+const addToCartButton = document.createElement("button");
+
+// Set the button text
+addToCartButton.textContent = "Add to Cart";
+
+// Add an event listener to the button
+addToCartButton.addEventListener("click", function() {
+    // Inside the event listener, call the addToCart function
+    addToCart(book); // Assuming 'book' is defined somewhere in your code
+});
+
 
                 // Append elements to book item
                 bookItem.appendChild(title);
