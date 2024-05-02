@@ -1,3 +1,4 @@
+const cart = [];
 document.addEventListener("DOMContentLoaded", function() {
     const searchInput = document.querySelector(".search-input");
     const searchButton = document.querySelector(".search-button");
@@ -60,17 +61,26 @@ document.addEventListener("DOMContentLoaded", function() {
                 image.alt = book.title;
 
                 const price = document.createElement("p");
-                price.textContent = `Price: $${generateRandomPrice(80, 250)}`;
-
+                const cost = generateRandomPrice(80, 250);
+                price.textContent = `Price: $${cost}`;
+                book.cost = cost;
 
 
                // Define an empty array to store the cart items
-const cart = [];
 
 // Function to add a book to the cart
 function addToCart(book) {
+    // Generate a random price between 80 and 250
+    //const price = Math.floor(Math.random() * (250 - 80 + 1)) + 80;
+    
+    // Include the generated price in the book obj
+
+    // Add the book to the cart
     cart.push(book);
+
     console.log("Book added to cart:", book);
+    console.log(cart);
+    localStorage.setItem('cart', JSON.stringify(cart));// You can do more here, like updating the UI to reflect the change in the cart
     // You can do more here, like updating the UI to reflect the change in the cart
 }
 
@@ -85,6 +95,8 @@ addToCartButton.addEventListener("click", function() {
     // Inside the event listener, call the addToCart function
     addToCart(book); // Assuming 'book' is defined somewhere in your code
 });
+
+
 
 
                 // Append elements to book item
