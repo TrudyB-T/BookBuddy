@@ -1,45 +1,42 @@
-// Array to store items in the cart
-let cart = [];
+document.addEventListener("DOMContentLoaded", function() {
+    // Retrieve data from local storage
+    const cartItems = JSON.parse(localStorage.getItem('cart'));
 
-// Function to display items in the cart
-function displayCart() {
-    const cartItemsElement = document.querySelector(".cart-items");
-    const cartTotal = document.querySelector(".cart-total");
-    if (cartItemsElement) {
-        cartItemsElement.innerHTML = "";
-        cart.forEach(item => {
-            const li = document.createElement("li");
-            li.textContent = `${item.title} - $${item.price}`;
-            cartItemsElement.appendChild(li); // Use renamed variable
+    // Get the ul element to populate cart items
+    const cartItemsList = document.getElementById('cart-items');
+
+    // Check if cartItems exist and it's an array
+    if (Array.isArray(cartItems) && cartItems.length > 0) {
+        // Iterate over each item in the cart and create list items
+        cartItems.forEach(item => {
+            // Create a list item for each cart item
+            const listItem = document.createElement('li');
+
+            const title = document.createElement('h3');
+            title.textContent = item.title;
+
+            // Create an image element
+            const image = document.createElement('img');
+            image.src = item.image; // Set the image source
+            image.alt = item.title; // Set the alt text
+
+
+            const cost = document.createElement('p');
+            cost.textContent = item.cost;
+
+            // Append image and title to the list item
+            listItem.appendChild(title);
+            listItem.appendChild(image);
+            listItem.appendChild(cost);
+
+
+            // Append the list item to the cart items list
+            cartItemsList.appendChild(listItem);
         });
-        calculateTotal();
     } else {
-        console.error('Cart items element not found');
+        // If cart is empty or doesn't exist, display a message
+        const emptyItem = document.createElement('li');
+        emptyItem.textContent = 'Your cart is empty.';
+        cartItemsList.appendChild(emptyItem);
     }
-}
-
-// Function to calculate total price of items in the cart
-function calculateTotal() {
-    const cartTotal = document.querySelector(".cart-total");
-    const total = cart.reduce((acc, item) => acc + parseFloat(item.price), 0);
-    if (cartTotal) {
-        cartTotal.textContent = `$${total.toFixed(2)}`;
-    } else {
-        console.error('Cart total element not found');
-    }
-}
-
-// Function to handle adding a book to the cart
-function addToCart(book) {
-    cart.push(book);
-    displayCart();
-}
-
-// Function to handle checkout
-function checkout() {
-    // Clear the cart
-    cart = [];
-    displayCart();
-    // Redirect user to index page
-    window.location.href = "index.html";
-}
+});
