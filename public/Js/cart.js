@@ -11,23 +11,61 @@ document.addEventListener("DOMContentLoaded", function() {
         cartItems.forEach(item => {
             // Create a list item for each cart item
             const listItem = document.createElement('li');
-
-            const title = document.createElement('h3');
-            title.textContent = item.title;
+            listItem.style.listStyleType = "none";
+            listItem.style.display ="flex";
+            listItem.style.marginBottom = "20px";
+            
+            
 
             // Create an image element
             const image = document.createElement('img');
             image.src = item.image; // Set the image source
             image.alt = item.title; // Set the alt text
-
+            image.style.height = 'auto';
+            image.style.width = '100px';
+            image.style.marginRight = "30px";
+            
+            
+            const title = document.createElement('h3');
+            title.textContent = item.title;
+            title.style.marginRight = "30px";
+            
 
             const cost = document.createElement('p');
-            cost.textContent = item.cost;
+            cost.textContent = '$' + item.cost;
+            cost.marginRight = "30px";     
+            
+            
+            // Create a container div
+const ordersDiv = document.createElement("div");
+ordersDiv.classList.add("orders");
 
+// Create a minus button
+const minusButton = document.createElement("button");
+minusButton.classList.add("minus");
+minusButton.textContent = "-";
+
+// Create a span element for "q"
+const quantitySpan = document.createElement("span");
+quantitySpan.classList.add("quant");
+quantitySpan.textContent = "q";
+
+// Create a plus button
+const plusButton = document.createElement("button");
+plusButton.classList.add("plus");
+plusButton.textContent = "+";
+
+// Append the elements to the ordersDiv
+ordersDiv.appendChild(minusButton);
+ordersDiv.appendChild(quantitySpan);
+ordersDiv.appendChild(plusButton);
+
+  
             // Append image and title to the list item
-            listItem.appendChild(title);
             listItem.appendChild(image);
+            listItem.appendChild(title);
             listItem.appendChild(cost);
+            listItem.appendChild(ordersDiv);
 
 
             // Append the list item to the cart items list
