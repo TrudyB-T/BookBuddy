@@ -48,12 +48,12 @@
             padding: 20px;
         }
         .cart {
-            background-color: #fff;
+            background-color: white;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             padding: 20px;
             margin: 20px auto;
-            max-width: 600px;
+            max-width: 800px;
         }
         .cart h2 {
             margin-top: 0;
@@ -79,6 +79,7 @@
             margin-left: 80%;
             border-radius: 5px;
             cursor: pointer;
+            text-decoration: none;
         }
         .checkout-button:hover {
             background-color: #411b4a;
@@ -89,8 +90,32 @@
             text-align: center;
             padding: 20px;
             bottom: 0;
-            width: 100%;
         }
+
+        .orders {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+            width: 93px;
+            height: 30px;
+            border: 1px solid #3d0b44;
+            margin-left: 10%;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quant {
+           text-align: center; /* Center content horizontally */  
+        }
+
+        .plus, .minus{
+            border: 1px solid #3d0b44;
+            background-color:#3d0b44 ;
+            cursor: pointer;
+            width: 31px;
+            color: white;
+            height: 30px;
+        }
+        
     </style>
 </head>
 <body>
@@ -110,9 +135,9 @@
         <div class="cart">
             <h2>Shopping Cart</h2>
             <ul id="cart-items">
-                <!-- Cart items will be displayed here -->
+                <!-- Cart items will be displayed here -->             
             </ul>
-            <p>Total: <span class="cart-total">$0.00</span></p>
+            <!--<p>Total: <span class="cart-total">$0.00</span></p> -->
             <a href="checkout.html" class="checkout-button">Checkout</a>
         </div>
     </main>
