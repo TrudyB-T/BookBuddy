@@ -80,9 +80,8 @@ function addToCart(book) {
 
     console.log("Book added to cart:", book);
     console.log(cart);
-    localStorage.setItem('cart', JSON.stringify(cart));// You can do more here, like updating the UI to reflect the change in the cart
-    // You can do more here, like updating the UI to reflect the change in the cart
-}
+    localStorage.setItem('cart', JSON.stringify(cart));
+    }
 
 // Create a button element
 const addToCartButton = document.createElement("button");
