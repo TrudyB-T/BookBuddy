@@ -68,20 +68,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
                // Define an empty array to store the cart items
 
-// Function to add a book to the cart
-function addToCart(book) {
-    // Generate a random price between 80 and 250
-    //const price = Math.floor(Math.random() * (250 - 80 + 1)) + 80;
-    
-    // Include the generated price in the book obj
+// Function to add an item to the cart
+function addToCart(item) {
+    // Retrieve cart items from local storage or initialize an empty array if it doesn't exist
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Add the book to the cart
-    cart.push(book);
+    // Check if the item already exists in the cart
+    const existingItemIndex = cartItems.findIndex(cartItem => cartItem.id === item.id);
 
-    console.log("Book added to cart:", book);
-    console.log(cart);
-    localStorage.setItem('cart', JSON.stringify(cart));
+    if (existingItemIndex !== -1) {
+        // If the item already exists, increment its quantity
+        cartItems[existingItemIndex].quantity++;
+    } else {
+        // If the item doesn't exist, add it to the cart with a quantity of 1
+        item.quantity = 1;
+        cartItems.push(item);
     }
+
+    // Update local storage with the updated cart items
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+
+    // Update the cart icon to reflect the new number of items in the cart
+    updateCartIcon(cartItems.length);
+}
+
 
 // Create a button element
 const addToCartButton = document.createElement("button");
