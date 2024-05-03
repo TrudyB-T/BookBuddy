@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Book Buddy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #330839; /*background color */
+            color: #fff; /* White font color */
+        }
+
+        header {
+            background-color: #330839;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #navbar{
+    display: flex;
+    align-items: right;
+    justify-content: right;
+  }
+  
+  #navbar li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+  }
+  
+  #navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color:  #fff;
+    transition: 0.3s ease;
+  }
+  
+  #navbar li a:hover,
+  #navbar li a.current{
+    color: grey;
+  }
+
+        main {
+            padding: 20px;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .book-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .book-item {
+            background-color: #330839;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .cart-icon img {
+            width: 20px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .book-item h3 {
+            margin-top: 0;
+        }
+
+        .search-results {
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #330839;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Book Buddy</h1>
+        </div>
+        <div>
+            <ul id="navbar">
+              <!--<li><a class="current" href="home.html">Home</a></li>-->
+              <!--<li><a href="books.html">Books</a></li>-->
+              <li><a href="cart.html"><i class="fa fa-cart-shopping"></i></a></li>
+              <li><a href="index.html">Logout</a></li>
+            </ul>
+           </div>
+    </header>
+    <main>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Enter book title">
+            <button class="search-button">Search</button>
+        </div>
+        <section class="book-list">
+            <!-- Book items will be dynamically generated here -->
+        </section>
+        <div class="search-results">
+            <!-- Search results will be displayed here -->
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Book Buddy - All rights reserved</p>
+    </footer>
+    <script src="./Js/script.js" defer></script>
+</body>
+</html>
