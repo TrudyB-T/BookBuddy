@@ -73,6 +73,7 @@ function addToCart(item) {
     // Retrieve cart items from local storage or initialize an empty array if it doesn't exist
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
+
     // Check if the item already exists in the cart
     const existingItemIndex = cartItems.findIndex(cartItem => cartItem.id === item.id);
 
