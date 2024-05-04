@@ -121,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to update the cart icon to display the number of items
     function updateCartIcon(itemCount) {
         cartIcon.setAttribute('data-count', itemCount);
+
     }
 
     // Function to update the cart display
