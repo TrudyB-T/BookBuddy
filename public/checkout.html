@@ -151,17 +151,20 @@
     </footer>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const checkoutForm = document.getElementById('checkout-form');
+        const checkoutForm = document.getElementById('checkout-form');
 
-            checkoutForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent the default form submission
+        checkoutForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
 
-                // Redirect to home.html after a brief delay (e.g., 1 second)
-                setTimeout(function() {
-                    window.location.href = 'home.html';
-                }, 1000); // Change the delay as needed
-            });
+            // Clear the cart
+            localStorage.removeItem('cart');
+
+            // Redirect to home.html after a brief delay (e.g., 1 second)
+            setTimeout(function() {
+                window.location.href = 'home.html';
+            }, 1000); // Change the delay as needed
         });
+    });
     </script>
 </body>
 </html>
