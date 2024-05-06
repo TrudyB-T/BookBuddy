@@ -178,22 +178,21 @@
     </footer>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Assuming you have a logout button in your HTML with id "logout-button"
             const logoutButton = document.getElementById('logout-button');
 
             logoutButton.addEventListener('click', async () => {
                 try {
-                    // Send a POST request to the logout endpoint
+                    // Sending a POST request to the logout endpoint.
                     const response = await fetch('/api/logout', {
                         method: 'POST'
                     });
 
                     if (response.ok) {
                         // If logout is successful, clear authentication token from local storage or cookies
-                        localStorage.removeItem('authToken'); // Example for local storage
+                        localStorage.removeItem('authToken');
 
-                        // Redirect the user to another page (e.g., login page)
-                        window.location.href = '/index.html'; // Change the URL to the home page URL
+                        // Redirecting the user to another page.
+                        window.location.href = '/index.html'; // Changed the URL to the home page URL
                     } else {
                         console.error('Logout failed');
                     }
