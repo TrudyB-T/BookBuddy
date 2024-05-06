@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign In</title>
   <style>
-    /* Add your CSS styles here */
+    /* Adding the CSS styles. */
     .container {
       max-width: 400px;
       margin: 0 auto;
@@ -65,7 +65,7 @@
       const password = document.getElementById('password').value;
 
       try {
-        // Send form data to backend API for authentication
+        // Sending form data to backend API for authentication
         const response = await fetch('/api/signin', {
           method: 'POST',
           headers: {
@@ -75,11 +75,11 @@
         });
 
         if (response.ok) {
-          // If sign-in is successful, clear form fields and redirect to homepage
+          // If sign-in is successful, clear form fields and redirect to homepage.
           document.getElementById('email').value = '';
           document.getElementById('password').value = '';
           console.log('Sign-in successful!');
-          window.location.href = 'home.html'; // Redirect to homepage
+          window.location.href = 'home.html'; // Redirecting to homepage.
         } else {
           console.error('Sign-in failed');
         }
