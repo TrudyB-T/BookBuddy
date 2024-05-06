@@ -154,15 +154,15 @@
         const checkoutForm = document.getElementById('checkout-form');
 
         checkoutForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
+            event.preventDefault(); // Preventing the default form submission
 
-            // Clear the cart
+            // Clearing the cart.
             localStorage.removeItem('cart');
 
-            // Redirect to home.html after a brief delay (e.g., 1 second)
+            // Redirect to home.html after a brief delay.
             setTimeout(function() {
                 window.location.href = 'home.html';
-            }, 1000); // Change the delay as needed
+            }, 1000); 
         });
     });
     </script>
