@@ -142,6 +142,9 @@
                 </div>
                 <button type="submit" class="submit-button">Place Order</button>
             </form>
+             <!-- Confirmation message container -->
+    <div id="confirmation-message" style="display: none; position: fixed; top: 0; left: 0; width: 100%; background-color: #4CAF50; color: white; text-align: center; padding: 10px; z-index: 1000;"></div>
+</main>
              <!-- Message informing the user to pay on delivery -->
             <p>Please note: You will be notified when your order has been shipped. Kindly make payment on delivery.</p>
         </main>
@@ -150,21 +153,28 @@
         <p>&copy; 2024 Book Buddy - All rights reserved</p>
     </footer>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        const checkoutForm = document.getElementById('checkout-form');
+      document.addEventListener("DOMContentLoaded", function() {
+    const checkoutForm = document.getElementById('checkout-form');
+    const confirmationMessage = document.getElementById('confirmation-message');
 
-        checkoutForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Preventing the default form submission
+    checkoutForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Preventing the default form submission
 
-            // Clearing the cart.
-            localStorage.removeItem('cart');
+        // Show confirmation message at the top of the screen
+        confirmationMessage.innerText = 'Your order has been confirmed. Shipment will arrive within 2 days. Please pay on delivery.';
+        confirmationMessage.style.display = 'block';
 
-            // Redirect to home.html after a brief delay.
-            setTimeout(function() {
-                window.location.href = 'home.html';
-            }, 1000); 
-        });
+        // Clearing the cart.
+        localStorage.removeItem('cart');
+
+        // Redirect to home.html after a brief delay.
+        setTimeout(function() {
+            window.location.href = 'home.html';
+        }, 7000); 
     });
+});
+  
+
     </script>
 </body>
 </html>
