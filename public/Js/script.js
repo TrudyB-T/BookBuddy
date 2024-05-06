@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const searchButton = document.querySelector(".search-button");
     const searchResults = document.querySelector(".search-results");
 
-    // Add event listener for search button click
+    // Added event listener for search button click
     searchButton.addEventListener("click", function() {
         const searchQuery = searchInput.value.trim();
         if (searchQuery !== "") {
@@ -25,25 +25,25 @@ document.addEventListener("DOMContentLoaded", function() {
             const apiUrl = `https://www.dbooks.org/api/search/${searchQuery}`;
             const response = await fetch(apiUrl);
 
-            // Check if the response is successful
+            // Checking if the response is successful
             if (!response.ok) {
                 throw new Error('Failed to fetch books');
             }
 
-            // Parse the JSON response
+            // Parsing the JSON response
             const responseData = await response.json();
 
-            console.log("API Response Data:", responseData); // Log the data to inspect its structure
+            console.log("API Response Data:", responseData);
 
-            // Extract the array of books from the response data
+            // Extracts the array of books from the response data
             const books = responseData.books;
 
-            // Clear previous search results
+            // Clearing previous search results
             searchResults.innerHTML = "";
 
-            // Loop through the array of books and create HTML elements to display each book
+            // Loop through the array of books and create an HTML elements to display each book
             books.forEach(book => {
-                // Create book item HTML elements
+                // Creates book item HTML elements
                 const bookItem = document.createElement("div");
                 bookItem.classList.add("book-item");
 
@@ -53,8 +53,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 const author = document.createElement("p");
                 author.textContent = `Author: ${book.authors}`;
 
-                const description = document.createElement("p"); // Create a paragraph for description
-                description.textContent = book.subtitle; // Assuming subtitle is the description field
+                const description = document.createElement("p");
+                description.textContent = book.subtitle;
 
                 const image = document.createElement("img");
                 image.src = book.image;
@@ -66,15 +66,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 book.cost = cost;
 
 
-               // Define an empty array to store the cart items
+               // Defines an empty array to store the cart items
 
 // Function to add an item to the cart
 function addToCart(item) {
-    // Retrieve cart items from local storage or initialize an empty array if it doesn't exist
+    // Retrieves cart items from local storage or initialize an empty array if it doesn't exist
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
 
-    // Check if the item already exists in the cart
+    // Checks if the item already exists in the cart
     const existingItemIndex = cartItems.findIndex(cartItem => cartItem.id === item.id);
 
     if (existingItemIndex !== -1) {
@@ -86,38 +86,36 @@ function addToCart(item) {
         cartItems.push(item);
     }
 
-    // Update local storage with the updated cart items
+    // Updating local storage with the updated cart items
     localStorage.setItem('cart', JSON.stringify(cartItems));
 
-    // Update the cart icon to reflect the new number of items in the cart
+    // Updating the cart icon to reflect the new number of items in the cart
     updateCartIcon(cartItems.length);
 }
 
 
-// Create a button element
+// Creates a button element
 const addToCartButton = document.createElement("button");
 
-// Set the button text
+// Sets the button text
 addToCartButton.textContent = "Add to Cart";
 
-// Add an event listener to the button
+// Added an event listener to the button
 addToCartButton.addEventListener("click", function() {
-    // Inside the event listener, call the addToCart function
-    addToCart(book); // Assuming 'book' is defined somewhere in your code
+    // calling the addToCart function
+    addToCart(book);
 });
 
 
-
-
-                // Append elements to book item
+                // Appends elements to book item
                 bookItem.appendChild(title);
                 bookItem.appendChild(author);
-                bookItem.appendChild(description); // Append description
+                bookItem.appendChild(description);
                 bookItem.appendChild(image);
                 bookItem.appendChild(price);
                 bookItem.appendChild(addToCartButton);
 
-                // Append book item to search results container
+                // Appends book item to search results container
                 searchResults.appendChild(bookItem);
             });
         } catch (error) {
