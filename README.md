@@ -1,7 +1,7 @@
-![BookBuddy](public/image/newlogo.PNG)
+![BookBuddy](public/image/logo.png)
 # Book Buddy - Your Online Bookstore
 
-Embarking on a Journey of Knowledge and Discovery
+Embarking on a Journey of Knowledge and Discovery- **API Documentation**: [Dbooks](dbooks_api.md)
 
 Book Buddy is an online platform that provides a wide range of educational resources to enthusiasts and learners. Whether you're interested in history, computer science, science & mathematics, economics & finance, philosophy, business & management, or politics & government, Book Buddy has something for everyone. With our vast collection of books spanning various genres and disciplines, you can embark on a journey of knowledge and discovery from the comfort of your home.
 
@@ -13,14 +13,13 @@ Book Buddy is an online platform that provides a wide range of educational resou
 - **Shopping Cart**: Add books to your cart for easy checkout.
 - **Checkout Process**: Seamless checkout process for purchasing books.
 - **External API Integration**: Fetch book data from external APIs to expand our collection.
-- **API Documentation**: [Dbooks](dbooks_api.md)
 
 
 
 ## Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Node.js, Express.js
+- **Backend**: Node.js, Express.js(framework)
 - **Database**: MongoDB
 - **Authentication**: JSON Web Tokens (JWT)
 - **API Integration**: Fetch book data from external APIs
@@ -67,6 +66,7 @@ We use external APIs to fetch book data for different categories. The following 
 
 - **Fetch Books by Category**: Fetch books based on the selected category from the external API.
 - **Search Books**: Search for books by title or author using the search functionality, which queries the external API for relevant results.
+- **API Documentation**: [Dbooks](dbooks_api.md)
 
 ## Contributing
 
