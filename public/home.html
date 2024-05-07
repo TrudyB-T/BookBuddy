@@ -72,6 +72,21 @@
             width: 20px; 
             height: auto; 
         }
+        .cartAmount {
+            background-color: red;
+            color: white;
+            font-size: 13px;
+            width: 12px;
+            height: 2px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: -7px;
+            right: 0;
+            padding: 4px;
+        }
 
         .book-item h3 {
             margin-top: 0;
@@ -103,12 +118,15 @@
         </div>
         <div>
             <ul id="navbar">
-              <!--<li><a class="current" href="home.html">Home</a></li>-->
-              <!--<li><a href="books.html">Books</a></li>-->
-              <li><a href="cart.html"><i class="fa fa-cart-shopping"></i></a></li>
+              <li><a class="current" href="home.html">Home</a></li>
               <li><a href="./about.html">About</a></li>
-
               <li><a href="index.html">Logout</a></li>
+              <li>
+                <a href="cart.html">
+                    <i class="fa fa-cart-shopping"></i>
+                    <span id="cart-amount" class="cartAmount">0</span>
+                </a>
+            </li>
             </ul>
            </div>
     </header>
