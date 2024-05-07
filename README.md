@@ -1,7 +1,7 @@
 ![BookBuddy](public/image/logo.png)
-# Book Buddy - Your Online Bookstore
+# Book Buddy - Your Ultimate Literary Companion
 
-Embarking on a Journey of Knowledge and Discovery
+Embarking on a Journey of Knowledge and Discovery- **API Documentation**: [Dbooks](dbooks_api.md)
 
 Book Buddy is an online platform that provides a wide range of educational resources to enthusiasts and learners. Whether you're interested in history, computer science, science & mathematics, economics & finance, philosophy, business & management, or politics & government, Book Buddy has something for everyone. With our vast collection of books spanning various genres and disciplines, you can embark on a journey of knowledge and discovery from the comfort of your home.
 
