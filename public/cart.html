@@ -64,6 +64,21 @@
             margin: 0;
             list-style: none;
         }
+        .cartAmount {
+            background-color: red;
+            color: white;
+            font-size: 13px;
+            width: 12px;
+            height: 2px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: -7px;
+            right: 0;
+            padding: 4px;
+        }
         .cart-items li {
             margin-bottom: 10px;
         }
@@ -126,8 +141,13 @@
             <ul id="navbar">
               <li><a href="home.html">Home</a></li>
              <!--<li><a href="books.html">Books</a></li>-->
-             <li><a href="cart.html"><i class="fa fa-cart-shopping"></i></a></li>
-
+             <!--<li><a href="cart.html"><i class="fa fa-cart-shopping"></i></a></li>-->
+             <li>
+                <a href="cart.html">
+                    <i class="fa fa-cart-shopping"></i>
+                    <span id="cart-amount" class="cartAmount">0</span>
+                </a>
+            </li>
             </ul>
            </div>
     </header>
@@ -145,5 +165,6 @@
         <p>&copy; 2024 Book Buddy - All rights reserved</p>
     </footer>
     <script src="Js/cart.js" defer></script>
+    <!--<script src="Js/script.js" defer></script>-->
 </body>
 </html>
