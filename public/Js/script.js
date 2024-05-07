@@ -92,7 +92,11 @@ function addToCart(item) {
     // Updating the cart icon to reflect the new number of items in the cart
     updateCartIcon(cartItems.length);
 }
-
+// Function to update the cart icon with the new cart amount
+function updateCartIcon(amount) {
+    let cartAmountElement = document.getElementById("cart-amount");
+    cartAmountElement.textContent = amount;
+}
 
 // Creates a button element
 const addToCartButton = document.createElement("button");
