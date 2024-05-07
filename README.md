@@ -1,4 +1,4 @@
-![BookBuddy](public/image/newlogo.PNG)
+![BookBuddy](public/image/logo.PNG)
 # Book Buddy - Your Online Bookstore
 
 Embarking on a Journey of Knowledge and Discovery
