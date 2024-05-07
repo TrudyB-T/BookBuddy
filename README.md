@@ -1,5 +1,5 @@
 ![BookBuddy](public/image/logo.PNG)
-# Book Buddy - Your Online Bookstore
+# Book Buddy 
 
 Embarking on a Journey of Knowledge and Discovery
 
