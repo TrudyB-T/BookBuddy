@@ -99,30 +99,41 @@ document.addEventListener("DOMContentLoaded", function() {
         return ordersDiv;
     }
 
-    // Function to update the quantity of a cart item
-    function updateQuantity(itemId, quantityChange) {
-        // Find the cart item by its ID
-        const index = cartItems.findIndex(item => item.id === itemId);
+   // Function to update the quantity of a cart item
+function updateQuantity(itemId, quantityChange) {
+    // Finding the cart item by its ID
+    const index = cartItems.findIndex(item => item.id === itemId);
 
-        // Update the quantity if the item is found
-        if (index !== -1) {
-            cartItems[index].quantity += quantityChange;
-            // Ensure quantity doesn't go below 0
-            if (cartItems[index].quantity < 0) {
-                cartItems.splice(index, 1); // Removes item if quantity is 0
-            }
-            // Updating local storage and UI
-            localStorage.setItem('cart', JSON.stringify(cartItems));
-            updateCartIcon(cartItems.length);
-            updateCartDisplay();
+    // Updating the quantity if the item is found
+    if (index !== -1) {
+        cartItems[index].quantity += quantityChange;
+        // Ensure quantity doesn't go below 0
+        if (cartItems[index].quantity < 0) {
+            cartItems.splice(index, 1); // Removes item if quantity is 0
         }
+        // Updating local storage and UI
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        updateCartIcon(calculateTotalQuantity(cartItems)); // Update the cart icon count
+        updateCartDisplay();
     }
+}
+
+// Function to calculate the total quantity of items in the cart
+function calculateTotalQuantity(cartItems) {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
+}
 
     // Function to update the cart icon to display the number of items
     function updateCartIcon(itemCount) {
         cartIcon.setAttribute('data-count', itemCount);
 
     }
+   
+    // Function to update the cart icon with the new cart amount
+function updateCartIcon(amount) {
+    let cartAmountElement = document.getElementById("cart-amount");
+    cartAmountElement.textContent = amount;
+}
 
     // Function to update the cart display
     function updateCartDisplay() {
