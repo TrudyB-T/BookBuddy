@@ -36,6 +36,23 @@
         main {
             padding: 20px;
         }
+        
+        .cartAmount {
+            background-color: red;
+            color: white;
+            font-size: 13px;
+            width: 12px;
+            height: 2px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: -7px;
+            right: 0;
+            padding: 4px;
+        }
+
         .checkout-form {
             background-color: #fff;
             border-radius: 8px;
@@ -116,7 +133,12 @@
             <ul id="navbar">
               <li><a href="home.html">Home</a></li>
             <!-- <li><a href="books.html">Books</a></li> -->
-              <li><a href="cart.html"><i class="fa fa-cart-shopping"></i></a></li>
+              <li>
+                <a href="cart.html">
+                    <i class="fa fa-cart-shopping"></i>
+                    <span id="cart-amount" class="cartAmount">0</span>
+                </a>
+            </li>
             </ul>
            </div>
     </header>
@@ -153,9 +175,19 @@
         <p>&copy; 2024 Book Buddy - All rights reserved</p>
     </footer>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
+        // Function to update the cart icon with the new cart amount
+function updateCartIcon(amount) {
+    let cartAmountElement = document.getElementById("cart-amount");
+    cartAmountElement.textContent = amount;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
     const checkoutForm = document.getElementById('checkout-form');
     const confirmationMessage = document.getElementById('confirmation-message');
+
+    // Call updateCartIcon when the page loads to update the cart icon based on the cart items in local storage
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    updateCartIcon(calculateTotalQuantity(cartItems));
 
     checkoutForm.addEventListener('submit', function(event) {
         event.preventDefault(); // Preventing the default form submission
@@ -167,14 +199,20 @@
         // Clearing the cart.
         localStorage.removeItem('cart');
 
+        // Update the cart icon to reflect the cart being empty
+        updateCartIcon(0);
+
         // Redirect to home.html after a brief delay.
         setTimeout(function() {
             window.location.href = 'home.html';
         }, 7000); 
     });
-});
-  
 
+    // Function to calculate the total quantity of items in the cart
+    function calculateTotalQuantity(cartItems) {
+        return cartItems.reduce((total, item) => total + item.quantity, 0);
+    }
+});
     </script>
 </body>
 </html>
