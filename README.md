@@ -14,6 +14,19 @@ Book Buddy is an online platform that provides a wide range of educational resou
 - **Checkout Process**: Seamless checkout process for purchasing books.
 - **External API Integration**: Fetch book data from external APIs to expand our collection.
 
+## Screenshots
+
+### Signup Section
+
+![Signup Section](public/image/signup.png)
+
+### Signin Section
+
+![Signin Section](public/image/signin.png)
+
+### Search Results
+
+![Search Results](public/image/search-results.png)
 
 
 ## Technologies Used
