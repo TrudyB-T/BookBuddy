@@ -55,7 +55,7 @@
         .search-container {
             margin-bottom: 20px;
         }
-
+      
         .book-list {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -67,7 +67,7 @@
             padding: 20px;
             border-radius: 8px;
         }
-
+       
         .cart-icon img {
             width: 20px; 
             height: auto; 
@@ -93,8 +93,11 @@
         }
 
         .search-results {
-            margin-top: 20px;
-        }
+    margin-top: 20px;
+    display: flex; /* Add this line to display results horizontally */
+    flex-wrap: nowrap; /* Ensure items do not wrap */
+    overflow-x: auto; /* Allow horizontal scrolling */
+}
 
         .search-button{
             color: #330839;
