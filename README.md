@@ -1,4 +1,4 @@
-![BookBuddy](public/image/logo.PNG)
+![BookBuddy](public/image/logo2.jpg)
 # Book Buddy 
 
 Embarking on a Journey of Knowledge and Discovery
